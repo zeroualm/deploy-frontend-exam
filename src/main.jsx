@@ -28,7 +28,11 @@ if (import.meta.env.PROD) {
     replays_session_sample_rate: 0.1,  // On enregistre 10% des sessions.
     replays_on_error_sample_rate: 1.0,  // Mais on enregistre 100% des sessions où une erreur survient.
   });
-  Sentry.captureMessage("Sentry fonctionne !");
+
+  console.log("PROD :", import.meta.env.PROD);
+  console.log("Sentry DSN :", !!import.meta.env.VITE_SENTRY_DSN);
+
+  Sentry.captureMessage("Sentry fonctionne");
 }
 
 createRoot(document.getElementById('root')).render(
