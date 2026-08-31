@@ -1,6 +1,7 @@
 import React, { Children,useState, useEffect } from "react";
 import axios from "axios";
-import Categories from "./Categories/Categories"
+import Categories from "./Categories/Categories";
+import * as Sentry from '@sentry/react';
 
 function ToDoList() {
 
@@ -181,7 +182,7 @@ function ToDoList() {
     }
     
     function TestComponent() {
-      const handleCrash = () => {
+        const handleCrash = () => {
         // Cette fonction va planter car 'undefined' n'a pas de propriété 'name'
         const user = undefined;
         console.log(user.name);

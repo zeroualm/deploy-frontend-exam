@@ -13,11 +13,11 @@ if (import.meta.env.PROD) {
     integrations: [
     // Cette intégration active le monitoring de performance.
     // Elle permet de voir, par exemple, combien de temps prennent les appels API.
-    Sentry.browserTracing(), 
+    Sentry.browserTracingIntegration(),
 
     // Cette intégration enregistre les sessions utilisateur où une erreur se produit.
     // C'est comme avoir une "vidéo" de ce que l'utilisateur a fait avant le bug.
-    Sentry.replay()
+    Sentry.replayIntegration()
     ],
 
     // On configure le taux d'échantillonnage pour la performance.
